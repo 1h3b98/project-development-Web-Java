@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="677.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.EditCarpoolingFXMLController">
+   <children>
+      <Button fx:id="cancel_button_id" layoutX="236.0" layoutY="593.0" mnemonicParsing="false" onAction="#CloseAdd" prefHeight="56.0" prefWidth="111.0" text="cancel" />
+      <Button fx:id="edit_button_id" layoutX="59.0" layoutY="593.0" mnemonicParsing="false" onAction="#EditCarpooling" prefHeight="56.0" prefWidth="111.0" text="edit" />
+      <DatePicker fx:id="departure_date_id" layoutX="175.0" layoutY="71.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="departure_location_id" layoutX="175.0" layoutY="127.0" />
+      <TextField fx:id="drop_off_location_id" layoutX="175.0" layoutY="180.0" />
+      <TextField fx:id="places_number_id" layoutX="175.0" layoutY="275.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="phone_id" layoutX="175.0" layoutY="228.0" />
+      <TextArea fx:id="preference_id" layoutX="175.0" layoutY="368.0" prefHeight="200.0" prefWidth="187.0" />
+      <Label layoutX="41.0" layoutY="76.0" text="departure date :" />
+      <Label layoutX="19.0" layoutY="132.0" text="departure location :" />
+      <Label layoutX="30.0" layoutY="185.0" text="drop off location :" />
+      <Label layoutX="45.0" layoutY="280.0" text="places number :" />
+      <Label layoutX="78.0" layoutY="327.0" text="baggages :" />
+      <Label layoutX="72.0" layoutY="371.0" text="preference :" />
+      <ComboBox fx:id="combo_baggage" layoutX="175.0" layoutY="323.0" prefWidth="150.0" visibleRowCount="2" />
+      <Label layoutX="43.0" layoutY="233.0" text="phone number :" />
+   </children>
+</AnchorPane>

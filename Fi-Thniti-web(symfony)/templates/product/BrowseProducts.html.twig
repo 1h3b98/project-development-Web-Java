@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<!-- jQuery UI -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- Bootstrap Css -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+
+<body>
+<h1 align="center">Browse products</h1>
+<form name="UserForm" method="get">
+    <label for name="user_id">User ID</label>
+
+    <input type="text" name="userID" id="user_id">
+    <input type="submit"value="Submit">
+</form>
+<form name="searchCat" action="{{ path('searchCat') }}" method="get">
+    <label for name="PCat">Product Category</label>
+    <input type="text" name="PCat" placeholder="Search for category" id="search" >
+    <input type="submit"value="Search">
+</form>
+
+<table align="center" border="1">
+   <!-- <script type="text/javascript" src="script.js">
+        $(Document).ready(function () {
+            $( '#search' ).keyup(function(){
+                var txt=$(this).val();
+                if(txt!=''){
+
+                }
+                else{
+                    $('#search').html('');
+                    $.ajax({
+                        source: 'Config/src/Controller/ajaxFilter.php',
+                        method: 'post',
+                        data: {search :$(this.val())},
+                        success: function (data){
+                            $('#search').html.data;
+                        }
+                    });
+                }
+
+
+
+            });
+
+
+        });
+    </script>-->
+    <tr>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Unit</th>
+        <th>Price</th>
+        <th>QTE</th>
+        <th>Add to cart</th>
+        <th>Remove from cart</th>
+
+    </tr>
+    <tr {% for p in Product %}>
+        <td>{{ p.category }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.brand}}</td>
+        <td>{{ p.unit}}</td>
+        <td>{{ p.price }}</td>
+        <td><input type="number" id={{ p.qte }} name="QTE"></td>
+        <td><a href="{{ path('AddToCart',{'id':p.productId }) }}">Add to cart</a></td>
+        <td><a href="{{ path('RemoveFromCart',{'id':p.productId }) }}">Remove from cart</a></td>
+
+
+
+    </tr{% endfor%}>
+</table>
+<div align="center">
+    <a href={{ path('Cart') }}>View cart</a>
+</div>
+
+</body>
+</html>

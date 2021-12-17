@@ -1,0 +1,11 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}New Complainttype{% endblock %}
+
+{% block body %}
+    <h1>Create new Complaint type</h1>
+
+    {{ include('complainttype/_form.html.twig') }}
+
+    <a href="{{ path('complainttype_index') }}">back to list</a>
+{% endblock %}

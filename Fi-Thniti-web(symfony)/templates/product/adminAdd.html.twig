@@ -1,0 +1,15 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Add Product{% endblock %}
+
+{% block body %}
+    <h1>Add Product</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+         <button class="btn btn-primary">Add</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('adminProducts') }}">back to list</a>
+
+{% endblock %}

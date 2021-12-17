@@ -1,0 +1,35 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Complainttype index{% endblock %}
+
+{% block body %}
+    <h1>Complaint type List </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for complainttype in complainttypes %}
+            <tr>
+                <td>{{ complainttype.id }}</td>
+                <td>{{ complainttype.type }}</td>
+                <td>
+                    <a href="{{ path('complainttype_show', {'id': complainttype.id}) }}">show</a>
+                    <a href="{{ path('complainttype_edit', {'id': complainttype.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('complainttype_new') }}">Create new</a>
+{% endblock %}

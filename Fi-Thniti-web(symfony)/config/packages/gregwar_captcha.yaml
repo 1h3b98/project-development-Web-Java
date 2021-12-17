@@ -1,0 +1,7 @@
+gregwar_captcha:
+    width: 100
+    height: 50
+    length: 6
+    max_front_lines: 2
+    max_behind_lines : 2
+    ignore_all_effects : true

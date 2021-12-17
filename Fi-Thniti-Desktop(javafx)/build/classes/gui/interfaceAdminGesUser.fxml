@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="831.0" prefWidth="1391.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.interfaceAdminGesUserController">
+   <children>
+      <Pane layoutX="-4.0" prefHeight="831.0" prefWidth="273.0" style="-fx-background-color: #3F2B63;">
+         <children>
+            <ImageView fitHeight="74.0" fitWidth="190.0" layoutX="5.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="74.0" fitWidth="190.0" layoutX="15.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="14.0" layoutY="137.0" text="Cut the fuel, Carpool" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Button layoutX="-1.0" layoutY="225.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="272.0" style="-fx-background-color: #6a5acd;" text="USER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="-2.0" layoutY="287.0" mnemonicParsing="false" onAction="#openWindowCarpooling" prefHeight="58.0" prefWidth="272.0" style="-fx-background-color: #6a5acd;" text="CARPOOLING" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutY="350.0" mnemonicParsing="false" onAction="#openWindowTransportation" prefHeight="58.0" prefWidth="272.0" style="-fx-background-color: #6a5acd;" text="TRANSPORTATION" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutY="413.0" mnemonicParsing="false" onAction="#openWindowProducts" prefHeight="58.0" prefWidth="272.0" style="-fx-background-color: #6a5acd;" text="PRODUCTS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="-1.0" layoutY="475.0" mnemonicParsing="false" onAction="#openWindowReclamation" prefHeight="58.0" prefWidth="272.0" style="-fx-background-color: #6a5acd;" text="RECLAMATION" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="268.0" layoutY="52.0" prefHeight="48.0" prefWidth="1174.0" style="-fx-background-color: #3F2B63;" AnchorPane.topAnchor="70.0">
+         <children>
+            <Label contentDisplay="CENTER" layoutX="562.0" prefHeight="49.0" prefWidth="149.0" text="User" textAlignment="CENTER" textFill="#fcf8f8">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="gesuser" layoutX="268.0" layoutY="118.0" prefHeight="713.0" prefWidth="1174.0">
+	  <children>
+      <Button fx:id="UserTableViewBtnSearch" layoutX="925.0" layoutY="31.0" mnemonicParsing="false" onAction="#UserTableViewBtnSearchOnClick" text="Search" />
+      <TextField fx:id="UserTableViewName" layoutX="185.0" layoutY="31.0" prefHeight="31.0" prefWidth="223.0" />
+      <DatePicker fx:id="UserTableViewBirthday" layoutX="137.0" layoutY="95.0" prefHeight="31.0" prefWidth="190.0" />
+      <TextField fx:id="UserTableViewNumber" layoutX="715.0" layoutY="30.0" />
+      <Label layoutX="60.0" layoutY="35.0" text="First/Last Name" />
+      <Label layoutX="541.0" layoutY="35.0" text="CIN/Phone number" />
+      <Label layoutX="57.0" layoutY="100.0" text="Birthday" />
+      <Label layoutX="484.0" layoutY="100.0" text="Username/E-mail" />
+      <TextField fx:id="UserTableViewLogins" layoutX="638.0" layoutY="95.0" />
+      <RadioButton fx:id="UserTableViewPrivilegeAll" layoutX="409.0" layoutY="169.0" mnemonicParsing="false" onAction="#refreshUsersList" selected="true" text="All">
+         <toggleGroup>
+            <ToggleGroup fx:id="inputprivilege" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="UserTableViewPrivilegeAdmin" layoutX="490.0" layoutY="169.0" mnemonicParsing="false" onAction="#refreshUsersList" text="Admin" toggleGroup="$inputprivilege" />
+      <RadioButton fx:id="UserTableViewPrivilegeUser" layoutX="594.0" layoutY="169.0" mnemonicParsing="false" onAction="#refreshUsersList" text="User" toggleGroup="$inputprivilege" />
+      <RadioButton fx:id="UserTableViewPrivilegeDriver" layoutX="697.0" layoutY="169.0" mnemonicParsing="false" onAction="#refreshUsersList" text="Driver" toggleGroup="$inputprivilege" />
+      <TableView fx:id="UserTableViewOUT" layoutX="19.0" layoutY="220.0" onMouseClicked="#UserTableViewTableViewClicked" prefHeight="424.0" prefWidth="1135.0">
+        <columns>
+          <TableColumn fx:id="tablecolumnFirstName" prefWidth="117.0" text="First Name" />
+            <TableColumn fx:id="tablecolumnLastName" prefWidth="113.0" text="Last Name" />
+            <TableColumn fx:id="tablecolumnCIN" prefWidth="103.0" text="CIN" />
+            <TableColumn fx:id="tablecolumnEmail" prefWidth="224.0" text="E-mail" />
+            <TableColumn fx:id="tablecolumnUsername" prefWidth="182.0" text="Username" />
+            <TableColumn fx:id="tablecolumnPhoneNumber" prefWidth="133.0" text="Phone number" />
+            <TableColumn fx:id="tablecolumnBirthday" prefWidth="164.0" text="Birthday" />
+            <TableColumn fx:id="tablecolumnPrivilege" prefWidth="98.0" text="Privilege" />
+        </columns>
+      </TableView>
+      <Label fx:id="numberofrows" layoutX="33.0" layoutY="190.0" prefHeight="21.0" prefWidth="103.0" />
+      <Button fx:id="usertableviewbtnadd" layoutX="989.0" layoutY="121.0" mnemonicParsing="false" onMouseClicked="#usertableviewbtnaddClicked" text="Add">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Label layoutX="43.0" layoutY="655.0" text="*)Double Click on a row to edit or delete the user">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+   </children>
+	  </Pane>
+   </children>
+</AnchorPane>

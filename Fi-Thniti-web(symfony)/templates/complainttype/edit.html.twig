@@ -1,0 +1,13 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Edit Complainttype{% endblock %}
+
+{% block body %}
+    <h1>Edit Complainttype</h1>
+
+    {{ include('complainttype/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('complainttype_index') }}">back to list</a>
+
+    {{ include('complainttype/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Complaint {% endblock %}
+
+{% block body %}
+    <h1>Complaint </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Object</th>
+                <th>Description</th>
+                <th>Email</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for complaint in complaints %}
+            <tr>
+                <td>{{ complaint.id }}</td>
+                <td>{{ complaint.object }}</td>
+                <td>{{ complaint.description }}</td>
+                <td>{{ complaint.email }}</td>
+                <td>
+                    <a href="{{ path('complaint_show', {'id': complaint.id}) }}">show</a>
+                    <a href="{{ path('complaint_edit', {'id': complaint.id}) }}">edit</a>
+                    <a href="{{ path('stat_index', {'id': complaint.id}) }}">stat</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('complaint_new') }}">Create new</a>
+
+     <a href="{{ path('complainttype_index') }}" target="_blank"
+                                class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Go to complaint's type</a>
+      
+{% endblock %}

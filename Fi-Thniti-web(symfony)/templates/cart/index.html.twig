@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cart index{% endblock %}
+
+{% block body %}
+    <h1>Cart index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>CartId</th>
+                <th>ProductQte</th>
+                <th>Total</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cart in carts %}
+            <tr>
+                <td>{{ cart.cartId }}</td>
+                <td>{{ cart.productQte }}</td>
+                <td>{{ cart.total }}</td>
+                <td>
+                    <a href="{{ path('cart_show', {'cartId': cart.cartId}) }}">show</a>
+                    <a href="{{ path('cart_edit', {'cartId': cart.cartId}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cart_new') }}">Create new</a>
+{% endblock %}

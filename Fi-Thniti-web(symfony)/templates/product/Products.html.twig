@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+</head>
+<body>
+<h1 align="center">Products list</h1>
+<form name="searchCatAdmin" action="{{ path('SearchCatAdmin') }}" method="post">
+    <label for name="PCat">Product Category</label>
+    <input type="text" name="PCat" placeholder="Search for category" id="searchCat" >
+    <input type="submit"value="Search">
+</form>
+
+<table align="center" border="1">
+    <tr>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Unit</th>
+        <th>Price</th>
+        <th>QTE</th>
+        <th>Delete</th>
+        <th>Update</th>
+
+    </tr>
+    <tr {% for p in Product %}>
+        <td>{{ p.category }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.brand}}</td>
+        <td>{{ p.unit}}</td>
+        <td>{{ p.price }}</td>
+        <td>{{ p.qte }}</td>
+        <td><a href="{{ path('deleteProduct',{'id':p.productId}) }}">Delete</a></td>
+        <td><a href="{{ path('updateProduct',{'id':p.productId}) }}">Update</a></td>
+
+
+
+    </tr{% endfor%}>
+</table>
+<div align="center">
+    <a href={{ path('AddProduct')}}>Add Product</a>
+
+</div>
+</body>
+</html>

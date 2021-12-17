@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="831.0" prefWidth="1391.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AffichageCarpoolingFXMLController">
+   <children>
+      <AnchorPane layoutX="268.0" layoutY="224.0" prefHeight="531.0" prefWidth="1128.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="268.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="224.0">
+         <children>
+            <TableView fx:id="table_id" layoutX="21.0" layoutY="70.0" onMouseClicked="#holder" opacity="0.74" prefHeight="413.0" prefWidth="1067.0" AnchorPane.bottomAnchor="20.0" AnchorPane.topAnchor="70.0">
+              <columns>
+                <TableColumn fx:id="col_departure_d" prefWidth="121.99996948242188" text="departure date" />
+                  <TableColumn fx:id="col_departure_l" prefWidth="150.0" text="departure location" />
+                  <TableColumn fx:id="col_drop" minWidth="0.0" prefWidth="144.0" text="drop off location" />
+                  <TableColumn fx:id="col_driver" prefWidth="133.0" text="driver name" />
+                  <TableColumn fx:id="col_phone" prefWidth="129.0" resizable="false" text="phone number" />
+                  <TableColumn fx:id="col_places" minWidth="0.0" prefWidth="153.0" text="places number" />
+                  <TableColumn fx:id="col_baggages" minWidth="0.0" prefWidth="0.0" text="baggages" />
+                  <TableColumn fx:id="col_preference" prefWidth="159.0" text="preference" />
+              </columns>
+            </TableView>
+            <Button fx:id="delete_id" mnemonicParsing="false" onAction="#deleteaction" prefHeight="39.0" prefWidth="80.0" style="-fx-background-color: #ff0000; -fx-background-radius: 2em;" text="Delete" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="10.0" />
+            <Button fx:id="update_id" layoutX="841.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateaction" prefHeight="39.0" prefWidth="80.0" style="-fx-background-color: #ffff66; -fx-background-radius: 2em;" text="Update" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="10.0" />
+            <Button fx:id="add_id" mnemonicParsing="false" onAction="#addaction" prefHeight="39.0" prefWidth="80.0" style="-fx-background-color: #00ff00; -fx-background-radius: 2em;" text="Add" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="10.0" />
+            <TextField fx:id="search_id" onInputMethodTextChanged="#searchUpdate" prefHeight="39.0" prefWidth="174.0" style="-fx-background-radius: 2em;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="10.0" />
+            <Button fx:id="refresh_id" layoutX="649.0" layoutY="14.0" mnemonicParsing="false" onAction="#Refresh" style="-fx-background-radius: 2em;" text="Refresh" AnchorPane.rightAnchor="411.0" AnchorPane.topAnchor="14.0" />
+         </children>
+      </AnchorPane>
+      <Pane layoutX="-4.0" prefHeight="831.0" prefWidth="273.0" style="-fx-background-color: #3F2B63;">
+         <children>
+            <ImageView fitHeight="74.0" fitWidth="190.0" layoutX="5.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="74.0" fitWidth="190.0" layoutX="15.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="14.0" layoutY="137.0" text="Cut the fuel, Carpool" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Button layoutX="-1.0" layoutY="225.0" mnemonicParsing="false" onAction="#openWindowUser" prefHeight="58.0" prefWidth="272.0" style="-fx-background-color: #6a5acd;" text="USER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="-2.0" layoutY="287.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="272.0" style="-fx-background-color: #6a5acd;" text="CARPOOLING" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutY="350.0" mnemonicParsing="false" onAction="#openWindowTransportation" prefHeight="58.0" prefWidth="272.0" style="-fx-background-color: #6a5acd;" text="TRANSPORTATION" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutY="413.0" mnemonicParsing="false" onAction="#openWindowProducts" prefHeight="58.0" prefWidth="272.0" style="-fx-background-color: #6a5acd;" text="PRODUCTS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="-1.0" layoutY="475.0" mnemonicParsing="false" onAction="#openWindowReclamation" prefHeight="58.0" prefWidth="272.0" style="-fx-background-color: #6a5acd;" text="RECLAMATION" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="268.0" layoutY="52.0" prefHeight="48.0" prefWidth="1174.0" style="-fx-background-color: #3F2B63;" AnchorPane.topAnchor="70.0">
+         <children>
+            <Label contentDisplay="CENTER" layoutX="482.0" prefHeight="49.0" prefWidth="229.0" text="carpooling list" textFill="#fcf8f8">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

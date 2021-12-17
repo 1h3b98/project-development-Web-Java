@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+</head>
+<body>
+<h1 align="center">Cart</h1>
+
+<table align="center" border="1">
+    <tr>
+        <th>Number of products</th>
+        <th>total</th>
+
+    </tr>
+    <tr {% for e in cart %}>
+        <td>{{ e.Product_qte }}</td>
+        <td>{{ e.total }}</td>
+
+    </tr{% endfor%}>
+</table>
+<br>
+<br>
+<table align="center" border="1">
+    <tr>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Unit</th>
+        <th>Price</th>
+        <th>QTE</th>
+
+
+    </tr>
+    <tr {% for p in CartProducts %}>
+        <td>{{ p.category }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.brand}}</td>
+        <td>{{ p.unit}}</td>
+        <td>{{ p.price }}</td>
+        <td>{{ p.qte }}</td>
+
+    </tr{% endfor%}>
+</table>
+</body>
+</html>

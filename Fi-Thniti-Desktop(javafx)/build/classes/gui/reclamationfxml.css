@@ -1,0 +1,22 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.buttongestionutilisateurs{
+    -fx-background-color: #FFD700;
+    -fx-background-radius: 24px;
+    
+}
+
+.Button Valider {
+    -fx-background-color: #FFD700;
+    -fx-background-radius: 50px;
+    
+}
+
+.button Visualiser {
+    -fx-background-color: #FFD700;
+    -fx-background-radius: 50px;
+    
+}
+
